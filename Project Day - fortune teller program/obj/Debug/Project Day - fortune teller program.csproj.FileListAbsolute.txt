@@ -13,3 +13,6 @@ C:\Users\Yankri\Documents\WCCI Bootcamp\Week 3\FortuneTeller-master\FortuneTelle
 C:\Users\Yankri\Documents\WCCI Bootcamp\Week 3\FortuneTeller-master\FortuneTeller-master\Project Day - fortune teller program\bin\Debug\Project Day - fortune teller program.exe
 C:\Users\Yankri\Documents\WCCI Bootcamp\Week 3\FortuneTeller-master\FortuneTeller-master\Project Day - fortune teller program\bin\Debug\Project Day - fortune teller program.pdb
 C:\Users\Yankri\Documents\WCCI Bootcamp\Week 3\FortuneTeller-master\FortuneTeller-master\Project Day - fortune teller program\obj\Debug\Project Day - fortune teller program.csprojResolveAssemblyReference.cache
+C:\Users\Yankri\Documents\WCCI Bootcamp\Week 3\Fortune Teller\FortuneTeller\Project Day - fortune teller program\bin\Debug\Project Day - fortune teller program.exe.config
+C:\Users\Yankri\Documents\WCCI Bootcamp\Week 3\Fortune Teller\FortuneTeller\Project Day - fortune teller program\obj\Debug\Project Day - fortune teller program.exe
+C:\Users\Yankri\Documents\WCCI Bootcamp\Week 3\Fortune Teller\FortuneTeller\Project Day - fortune teller program\obj\Debug\Project Day - fortune teller program.pdb
