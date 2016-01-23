@@ -10,25 +10,23 @@ namespace Project_Day___fortune_teller_program
     {
         public static bool Restart (string userInput)
         {
-            bool breakOut = true;
-
             if (userInput.ToLower() == "restart")
-                {
-                breakOut = false;
-                }
-            return breakOut;
+            {
+                return true;
+            }
+
+            return false;
         }
 
         public static bool Quit (string userInput)
         {
-            bool breakOut = true;
-
             if (userInput.ToLower() == "quit")
             {
-                breakOut = false;
+                return true;
             }
-            return breakOut;
+            return false;
         }
+
         public static string Balance(string firstName, string lastName, string firstLetter, string secondLetter, string thirdLetter)
         {
             string balance;
@@ -53,34 +51,20 @@ namespace Project_Day___fortune_teller_program
 
             return balance;
         }
+
         public static string Location (int siblings)
         {
             string[] possibleLocations = { "The Maldives", "Paris, France", "New York City", "Australia", "a van down by the river" };
-            string location;
-            if (siblings == 0)
+            string location = possibleLocations[4];
+            if (siblings >= 0 && siblings <=3 )
             {
-                location = possibleLocations[0];
+                location = possibleLocations[siblings];
             }
-            else if (siblings == 1)
-            {
-                location = possibleLocations[1];
-            }
-            else if (siblings == 2)
-            {
-                location = possibleLocations[2];
-            }
-            else if (siblings == 3)
-            {
-                location = possibleLocations[3];
-            }
-            else
-            {
-                location = possibleLocations[4];
-            }
-
+            
             return location;
         }
-        public static bool EvenOrOdd (int age)
+
+        public static bool IsEven (int age)
         {
             bool evenorodd;
 
@@ -97,45 +81,33 @@ namespace Project_Day___fortune_teller_program
 
         public static string VehicleType (string color)
         {
-            string vehicle;
             switch (color.ToLower())
             {
                 case "r": //these will catch either a single letter or the color spelled out
                 case "red":
-                    vehicle = "Corvette";
-                    break;
+                    return "Corvette";
                 case "o":
                 case "orange":
-                    vehicle = "semi truck";
-                    break;
+                    return "semi truck";
                 case "y":
                 case "yellow":
-                    vehicle = "school bus";
-                    break;
+                    return "school bus";
                 case "g":
                 case "green":
-                    vehicle = "Jeep";
-                    break;
+                    return "Jeep";
                 case "b":
                 case "blue":
-                    vehicle = "station wagon";
-                    break;
+                    return "station wagon";
                 case "i":
                 case "indigo":
-                    vehicle = "4 door sedan";
-                    break;
+                    return "4 door sedan";
                 case "v":
                 case "violet":
-                    vehicle = "PT Cruiser";
-                    break;
+                    return "PT Cruiser";
                 default:
-                    vehicle = "minivan";
-                    break;
+                    return "minivan";
             }
-
-            return vehicle;
         }
-
 
         static void Main(string[] args)
         {
@@ -159,11 +131,11 @@ namespace Project_Day___fortune_teller_program
                 //first name input
                 Console.WriteLine("Enter your first name: ");
                 string firstName = Console.ReadLine();
-                if (Restart(firstName) == false)
+                if (Restart(firstName))
                 {
                     continue;
                 }
-                if (Quit(firstName) == false)
+                if (Quit(firstName))
                 {
                     Console.WriteLine("Nobody likes a quitter...");
                     break;
@@ -172,11 +144,11 @@ namespace Project_Day___fortune_teller_program
                 // last name input
                 Console.WriteLine("Enter your last name: ");
                 string lastName = Console.ReadLine().ToLower();
-                if (Restart(lastName) == false)
+                if (Restart(lastName))
                 {
                     continue;
                 }
-                if (Quit(lastName) == false)
+                if (Quit(lastName))
                 {
                     Console.WriteLine("Nobody likes a quitter...");
                     break;
@@ -185,11 +157,11 @@ namespace Project_Day___fortune_teller_program
                 //age input
                 Console.WriteLine("Enter your age: ");
                 string ageInput = Console.ReadLine().ToLower();
-                if (Restart(ageInput) == false)
+                if (Restart(ageInput))
                 {
                     continue;
                 }
-                if (Quit(ageInput) == false)
+                if (Quit(ageInput))
                 {
                     Console.WriteLine("Nobody likes a quitter...");
                     break;
@@ -203,12 +175,12 @@ namespace Project_Day___fortune_teller_program
                     Console.WriteLine("Please enter your age as an integer: ");
                     ageInput = Console.ReadLine();
                     result = int.TryParse(ageInput, out age); 
-                    if (Restart(ageInput) == false)
+                    if (Restart(ageInput))
                     {
                         continueBreak = true;//assigning true here makes the if statement below continue the outer while loop and restart the program
                         break;
                     }
-                    if (Quit(ageInput) == false)
+                    if (Quit(ageInput))
                     {
                         doubleBreak = true; //assigning true here makes the if statement below break the outer while loop and quit the program
                         Console.WriteLine("Nobody likes a quitter...");
@@ -232,11 +204,11 @@ namespace Project_Day___fortune_teller_program
                 // birth month input
                 Console.WriteLine("Enter your birth month: ");
                 string month = Console.ReadLine().ToLower();
-                if (Restart(month) == false)
+                if (Restart(month))
                 {
                     continue;
                 }
-                if (Quit(month) == false)
+                if (Quit(month))
                 {
                     Console.WriteLine("Nobody likes a quitter...");
                     break;
@@ -292,11 +264,11 @@ namespace Project_Day___fortune_teller_program
                 //color input
                 Console.WriteLine("Enters your favorite ROYGBIV color. If you don't know what ROYGBIV colors are, enter \"help\".");
                 string color = Console.ReadLine().ToLower();
-                if (Restart(color) == false)
+                if (Restart(color))
                 {
                     continue;
                 }
-                if (Quit(color) == false)
+                if (Quit(color))
                 {
                     Console.WriteLine("Nobody likes a quitter...");
                     break;
@@ -308,12 +280,12 @@ namespace Project_Day___fortune_teller_program
                         Console.WriteLine("ROYGBIV colors are the colors of the rainbow. \n R = red\n O = orange\n Y = yellow\n G = green\n B = blue\n I = indigo\n V = violet");
                         Console.WriteLine("Enter your favorite ROYGBIV color: ");
                         color = Console.ReadLine().ToLower();
-                        if (Restart(color) == false)
+                        if (Restart(color))
                         {
                             continueBreak = true; //like above, these will go into the later if statement to break/continue the outer loop
                             break;
                         }
-                        if (Quit(color) == false)
+                        if (Quit(color))
                         {
                             doubleBreak = true;
                             Console.WriteLine("Nobody likes a quitter...");
@@ -339,12 +311,12 @@ namespace Project_Day___fortune_teller_program
                 //sibling input
                 Console.WriteLine("Enter the number of siblings you have: ");
                     string siblingInput = Console.ReadLine(); 
-                    if (Restart(siblingInput) == false)
+                    if (Restart(siblingInput))
                     {
                         continue;
                     }
 
-                    if (Quit(siblingInput) == false)
+                    if (Quit(siblingInput))
                     {
                         Console.WriteLine("Nobody likes a quitter...");
                         break;
@@ -358,13 +330,13 @@ namespace Project_Day___fortune_teller_program
                         Console.WriteLine("Please enter an integer for the number of siblings: ");
                         siblingInput = Console.ReadLine();
                         result2 = Int32.TryParse(siblingInput, out siblings);
-                        if (Restart(siblingInput) == false)
+                        if (Restart(siblingInput))
                         {
                             continueBreak = true;
                             break;
                         }
 
-                        if (Quit(siblingInput) == false)
+                        if (Quit(siblingInput))
                         {
                         doubleBreak = true;
                         Console.WriteLine("Nobody likes a quitter...");
@@ -385,8 +357,8 @@ namespace Project_Day___fortune_teller_program
                     continue;
                 }
 
-                    //Number of years to Retirement
-                    string retirement;
+                //Number of years to Retirement
+                string retirement;
                 string[] years = { "1 million years", "100 years", "5 years" };
 
                 if (age == 0)
@@ -395,7 +367,7 @@ namespace Project_Day___fortune_teller_program
                 }
                 else
                 {
-                    if (EvenOrOdd(age) == true)
+                    if (IsEven(age) == true)
                     {
                         retirement = years[1];
                     }
@@ -405,48 +377,48 @@ namespace Project_Day___fortune_teller_program
                     }
                 }
 
-                    //Siblings
-                    string location = Location(siblings);
+                //Siblings
+                string location = Location(siblings);
 
-                    //Determine vehicle based on favorite color
-                    string vehicle = VehicleType(color);
+                //Determine vehicle based on favorite color
+                string vehicle = VehicleType(color);
 
-                    //Determine bank account balance based on first letter of birth month
-                    string firstLetter = month[0].ToString().ToLower();
-                    string secondLetter = month[1].ToString().ToLower();
-                    string thirdLetter = month[2].ToString().ToLower();
+                //Determine bank account balance based on first letter of birth month
+                string firstLetter = month[0].ToString().ToLower();
+                string secondLetter = month[1].ToString().ToLower();
+                string thirdLetter = month[2].ToString().ToLower();
 
-                    string balance = Balance(firstName, lastName, firstLetter, secondLetter, thirdLetter);
+                string balance = Balance(firstName, lastName, firstLetter, secondLetter, thirdLetter);
 
-                    //Print results
-                    for (int i = 0; i < 4; i++)
-                    {
-                        Console.WriteLine("\aProcessing...\n \n \n");
-                        System.Threading.Thread.Sleep(1000); //makes the loop pause for 1 second between loops
-                    }
+                //Print results
+                for (int i = 0; i < 4; i++)
+                {
+                    Console.WriteLine("\aProcessing...\n \n \n");
+                    System.Threading.Thread.Sleep(1000); //makes the loop pause for 1 second between loops
+                }
 
-                    Console.WriteLine("\aThe future has spoken! \n \n \n"); //beeps when printed
+                Console.WriteLine("\aThe future has spoken! \n \n \n"); //beeps when printed
 
-                    Console.WriteLine(String.Concat(firstName, " ", lastName, " will retire in ", retirement, " with ", balance, " in the bank, a vacation home in ", location, " and a ", vehicle, "."));
-                    Console.WriteLine();
-                    Console.WriteLine("Would you like to try again? Enter \"yes\" to continue or \"quit\" to exit.");
-                    string tryAgain = Console.ReadLine().ToLower();
+                Console.WriteLine(String.Concat(firstName, " ", lastName, " will retire in ", retirement, " with ", balance, " in the bank, a vacation home in ", location, " and a ", vehicle, "."));
+                Console.WriteLine();
+                Console.WriteLine("Would you like to try again? Enter \"yes\" to continue or \"quit\" to exit.");
+                string tryAgain = Console.ReadLine().ToLower();
 
-                    if (tryAgain.Equals("restart"))
-                    {
-                        continue;
-                    }
+                if (tryAgain.Equals("restart"))
+                {
+                    continue;
+                }
 
-                    if (tryAgain.Equals("yes"))
-                    {
-                        continue;
-                    }
+                if (tryAgain.Equals("yes"))
+                {
+                    continue;
+                }
 
-                    if (tryAgain.Equals("quit"))
-                    {
-                        Console.WriteLine("Nobody likes a quitter...");
-                        break;
-                    }
+                if (tryAgain.Equals("quit"))
+                {
+                    Console.WriteLine("Nobody likes a quitter...");
+                    break;
+                }
                 
             }
 
