@@ -399,7 +399,7 @@ namespace Project_Day___fortune_teller_program
 
                 Console.WriteLine("\aThe future has spoken! \n \n \n"); //beeps when printed
 
-                Console.WriteLine(String.Concat(firstName, " ", lastName, " will retire in ", retirement, " with ", balance, " in the bank, a vacation home in ", location, " and a ", vehicle, "."));
+                Console.WriteLine(String.Concat(firstName, " ", lastName, " will retire in ", retirement, " with ", balance, " in the bank, \na vacation home in ", location, " and a ", vehicle, "."));
                 Console.WriteLine();
                 Console.WriteLine("Would you like to try again? Enter \"yes\" to continue or \"quit\" to exit.");
                 string tryAgain = Console.ReadLine().ToLower();
