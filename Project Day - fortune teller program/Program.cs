@@ -417,6 +417,7 @@ namespace Project_Day___fortune_teller_program
                 if (tryAgain.Equals("quit"))
                 {
                     Console.WriteLine("Nobody likes a quitter...");
+                    Console.ReadKey();
                     break;
                 }
                 
